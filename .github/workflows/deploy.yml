@@ -27,5 +27,13 @@ jobs:
       run: npm run build
     - name: Tests
       run: npm test
-    - name: Deploy to Firebase Hosting
-      run: ./node_modules/.bin/firebase deploy --token=${{ secrets.FIREBASE_DEPLOY_TOKEN }}
+    - name: Deploy to Firebase
+      uses: w9jds/firebase-action@master
+      with:
+        args: deploy --only hosting
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_DEPLOY_TOKEN }}
+    # - run: echo "${{ secrets.FIREBASE_DEPLOY_TOKEN }}" > ./gcloud.json
+    # - run: export GOOGLE_APPLICATION_CREDENTIALS=./gcloud.json
+    # - name: Firebase Deploy
+    #   run: npx firebase-tools deploy --non-interactive
