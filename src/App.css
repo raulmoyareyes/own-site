@@ -27,16 +27,3 @@
   max-width: 75%;
   margin: 0 auto;
 }
-
-@media (--medium-viewport) {
-
-  .header__title {
-    font-size: 5rem;
-    margin: 8rem auto 0 auto;
-  }
-
-  .header__subtitle {
-    font-size: 1.4rem;
-  }
-
-}
